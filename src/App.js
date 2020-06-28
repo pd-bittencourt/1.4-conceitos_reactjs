@@ -13,7 +13,14 @@ function App() {
   });
 
   async function handleAddRepository() {
-    // TODO
+    const response = await api.post("repositories", {
+      title: "NodeJS 2",
+      url: "http://any.com",
+      techs: ["Javascript", "NodeJS", "Nodemon"],
+    });
+    const repository = response.data;
+
+    setRepositories([...repositories, repository]);
   }
 
   async function handleRemoveRepository(id) {
