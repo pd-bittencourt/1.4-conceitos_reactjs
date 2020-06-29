@@ -13,7 +13,7 @@ function App() {
         setRepositories(response.data);
       })
       .catch((err) => console.error(err));
-  });
+  }, []);
 
   async function handleAddRepository() {
     const response = await api.post("repositories", {
